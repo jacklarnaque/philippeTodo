@@ -41,7 +41,7 @@ export default function Main() {
 console.log(formInput)
   return (
     <div className='main-div'>
-        <h1>New Task :</h1>
+        <h2>New Task :</h2>
         <Form 
       labelCol={{
         span: 4,
@@ -104,7 +104,6 @@ console.log(formInput)
         <Button>Create Task</Button>
       </Form.Item>
     </Form>
-    <p>{formInput.title}, {formInput.body},</p>
     </div>
   )
 }

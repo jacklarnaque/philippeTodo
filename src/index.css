@@ -75,6 +75,7 @@ h1 em {
   box-shadow: 10px 5px 5px #b80000;
   background-color: #d7d7d73b;
   height: 80vh;
+  padding: 10px;
 }
 .container, .footer {
   width: 80vw;
@@ -87,11 +88,11 @@ h1 em {
   justify-content: space-between;
  
 }
-.main-div h1 {
+.main-div h2, .sideTasks h2 {
   text-align: center;
-  padding: 2%;
+  padding: 5px;
   padding-bottom: 1rem;
-  font-size: 2.5vw;
+  font-size: 2vw;
   }
   .buttonSubmit {
     text-align: right;
@@ -100,14 +101,15 @@ h1 em {
   .sideTasks {
       width: 20%;
       height: 80vh;
-      background-color: aqua;
+      background-color: rgba(255, 255, 255, 0.48)
      
   }
+ 
   .split {
     display: flex;
 }
 .gutter {
-  background-color: rgba(39, 36, 36, 0.342);
+  background-color: rgba(255, 255, 255, 0);
 
   background-repeat: no-repeat;
   background-position: 50%;
