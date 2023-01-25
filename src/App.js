@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import React from 'react';
+import Footer from './components/Footer';
+import Main from './components/Main';
+import Header from './components/Header';
+import Split from 'react-split';
+import SideTasks from './components/SideTasks';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+
+    <>
+      <Header />
+      <Split
+        sizes={[30, 70]}
+        direction="horizontal"
+        className="split"
+        cursor='col-resize'
+        gutterSize={50}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <SideTasks />
+        <Main />
+      </Split>
+      <Footer />
+        </>
+
+
+
+
   );
 }
 
