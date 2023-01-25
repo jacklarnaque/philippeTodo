@@ -1,27 +1,44 @@
 import React from 'react'
+
 import {
     Button,
+    Checkbox,
     DatePicker,
     Form,
     Input,
-    Switch,
   } from 'antd';
 import { useState } from 'react';
 const { TextArea } = Input;
 
+
+
 export default function Main() {
-  const [title, setTitle] = useState('hi')
+
+  const [formInput, setFormInput] = useState
+  (
+    {
+    title: '',
+    body: '',
+    urgent: true,
+    date: null
+    }
+  )
   const [componentSize, setComponentSize] = useState('default');
   const onFormLayoutChange = ({ size }) => {
     setComponentSize(size);
   };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-    // from elements property
-      console.log(event.target.title.value)          // or directly
-    }
 
+  function handleChange (event) {
+    const {name, value, type, checked} = event.target
+    setFormInput(prevFormInput => {
+       return {
+         ...prevFormInput,
+         [name]: type === "checkbox" ? checked : value
+        }
+    })
+    
+  }
+console.log(formInput)
   return (
     <div className='main-div'>
         <h1>New Task :</h1>
@@ -44,29 +61,50 @@ export default function Main() {
     >
       <Form.Item
       label="Title">
-        <Input 
+        <Input
         name='title'
+        type='text' 
+        value={formInput.title}
+        onChange={handleChange}
         required
-        value={title}
-        onChange={(e)=> setTitle(e.target.value) }/>
+        />
       </Form.Item>
-      <Form.Item label="Color">
-        <Input type='color' />
+      
+      <Form.Item
+      label="Dead line">
+        <DatePicker 
+        name='date'
+        type='date'
+        onChange={handleChange}
+        dateForma='dd/MM/yyyy'
+        value={formInput.date}
+       
+        />
       </Form.Item>
-      <Form.Item label="Dead line">
-        <DatePicker />
-      </Form.Item>
-      <Form.Item label="TextArea">
-          <TextArea rows={4}
-          required/>
+      <Form.Item
+      label="TextArea">
+          <TextArea
+          type='text'
+          name='body'
+          rows={4}
+          value={formInput.body}
+          onChange={handleChange}
+          required
+          />
         </Form.Item>
-      <Form.Item label="Urgent " valuePropName="checked">
-        <Switch />
+      <Form.Item 
+      label="Urgent"
+      valuePropName="checked">
+        <Checkbox
+        checked={formInput.urgent}
+        onChange={handleChange}
+        name='urgent' />
       </Form.Item>
     <Form.Item className='buttonSubmit'>
-        <Button onClick={handleSubmit}>Create Task</Button>
+        <Button>Create Task</Button>
       </Form.Item>
     </Form>
+    <p>{formInput.title}, {formInput.body},</p>
     </div>
   )
 }

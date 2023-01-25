@@ -70,30 +70,60 @@ h1 em {
   background-color: #b80000;
 }
 /* === END TITLE === */
-.main-div {
+.main-div, .sideTasks {
   border: solid;
   box-shadow: 10px 5px 5px #b80000;
   background-color: #d7d7d73b;
   height: 80vh;
 }
-.main-div, .footer {
+.container, .footer {
   width: 80vw;
-  max-width: 50vw;
-  min-width: 30vw;
   padding: 1%;
+  max-width: 70vw;
+  min-width: 30vw;
 }
 .footer {
   display: flex;
   justify-content: space-between;
-  position: absolute;
  
 }
 .main-div h1 {
   text-align: center;
   padding: 2%;
   padding-bottom: 1rem;
-  font-size: 3vw;
+  font-size: 2.5vw;
   }
   .buttonSubmit {
     text-align: right;
   }
+  
+  .sideTasks {
+      width: 20%;
+      height: 80vh;
+      background-color: aqua;
+     
+  }
+  .split {
+    display: flex;
+}
+.gutter {
+  background-color: rgba(39, 36, 36, 0.342);
+
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-vertical {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+}
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+}
+
+.gutter.gutter-vertical {
+  cursor: row-resize;
+}
