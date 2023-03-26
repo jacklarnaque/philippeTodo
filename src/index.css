@@ -22,7 +22,7 @@ h1 {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: 300;
-  font-size: 5vw;
+  font-size: 3vw;
   color: #080808;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
@@ -39,7 +39,7 @@ h1 em {
   font-weight: 600;
 }
 .one {
-  padding: 10%;
+  padding: 5%;
 }
 
 .one h1 {
@@ -74,7 +74,7 @@ h1 em {
   border: solid 1px;
   box-shadow: 10px 5px 5px #b80000;
   background-color: #d7d7d73b;
-  height: 80vh;
+  height: 70vh;
   padding: 10px;
 }
 .container, .footer {
@@ -102,7 +102,7 @@ h1 em {
   
   .sideTasks {
       width: 20%;
-      height: 80vh;
+      height: 70vh;
       background-color: rgba(255, 255, 255, 0.48)
      
   }
