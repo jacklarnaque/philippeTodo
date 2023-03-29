@@ -87,9 +87,12 @@ h1 em {
   display: flex;
   justify-content: space-between;
   font-size: 2vw;
-
- 
 }
+.main-div {
+  min-width: 388px;
+}
+ 
+
 .main-div h2, .sideTasks h2 {
   text-align: center;
   padding: 5px;
@@ -101,7 +104,7 @@ h1 em {
   }
   
   .sideTasks {
-      width: 20%;
+      min-width: 20%;
       height: 70vh;
       background-color: rgba(255, 255, 255, 0.48)
      
@@ -130,4 +133,11 @@ h1 em {
 
 .gutter.gutter-vertical {
   cursor: row-resize;
+}
+
+
+.card p {
+color: #8b8b8bfe;
+ max-width:max-content
+
 }

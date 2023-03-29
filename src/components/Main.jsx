@@ -1,5 +1,7 @@
 import React from 'react'
-import { Card, Space } from 'antd';
+import Split from 'react-split';
+import SideTasks from './sideNotes/SideTasks';
+
 import {
     Button,
     Checkbox,
@@ -42,23 +44,35 @@ export default function Main() {
   }
  
   function handleChange (event) {
-    const {name, value, type, checked} = event.target
-    setFormInput(prevFormInput => {
-       return {
-         ...prevFormInput,
-         [name]: type === "checkbox" ? checked : value,
+      const {name, value, type, checked} = event.target
+      setFormInput(prevFormInput => {
+        return {
+          ...prevFormInput,
+          [name]: type === "checkbox" ? checked : value,
         }
-    })
-    setDate(prevDate => {
-      return  {
-        ...prevDate,
-        date
-      }
-    })
-    
+      })
+      setDate(prevDate => {
+        if(date === Date) {
+          return  {
+            ...prevDate,
+            date
+          }
+          } else {
+            setDate("pas de date definis pour cette tache")
+          }
+      }) 
+  
   }
-console.log(allData)
+
   return (
+    <Split
+    sizes={[30, 70]}
+    direction="horizontal"
+    className="split"
+    cursor='col-resize'
+    gutterSize={50}
+    >
+    <SideTasks allData={allData} />
     <div className='main-div'>
         <h2>New Task :</h2>
         <Form 
@@ -118,30 +132,14 @@ console.log(allData)
         dateForma='dd/MM/yyyy'
         required
         />
-        
+      
       </Form.Item>
     <Form.Item className='buttonSubmit'>
         <Button onClick={createTask}>Create Task</Button>
       </Form.Item>
     </Form>
-    <Space direction="vertical" size={16}>
-    <Card size="small" title="Small size card"style={{ width: 300 }}>
-      <p>Card content</p>
-      <p>Card content</p>
-      <p>Card content</p>
-    </Card>
-  </Space>
-    <div>
-      {allData.map((datas) => {
-        return (
-          <ol> 
-          <li>{datas}</li>
-            </ol>
-      )
-      }) }
-    
     </div>
-    </div>
+    </Split>
     
   )
 }
